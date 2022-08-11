@@ -73,6 +73,7 @@ public class AcsTerminal extends AbstractTerminal {
 
 	@Override
 	public void stopListening() {
+		tagScanner.setRunning(false);
 		scanningThread.interrupt();
 	}
 

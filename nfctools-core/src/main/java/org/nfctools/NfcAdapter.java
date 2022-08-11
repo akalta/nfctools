@@ -55,6 +55,10 @@ public class NfcAdapter implements TagListener {
 	public void registerTagListener(NfcTagListener nfcTagListener) {
 		nfcTagListeners.add(nfcTagListener);
 	}
+	
+	public void removeTagListener(NfcTagListener nfcTagListener) {
+		nfcTagListeners.remove(nfcTagListener);
+	}
 
 	public void registerUnknownTagListerner(UnknownTagListener unknownTagListener) {
 		this.unknownTagListener = unknownTagListener;

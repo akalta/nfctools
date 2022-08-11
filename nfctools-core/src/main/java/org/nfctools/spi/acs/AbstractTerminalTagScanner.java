@@ -35,6 +35,7 @@ public abstract class AbstractTerminalTagScanner implements Runnable {
 	protected TerminalStatusListener statusListener;
 	protected TagListener tagListener;
 	protected NFCIPConnectionListener nfcipConnectionListener;
+	protected boolean running;
 
 	protected AbstractTerminalTagScanner(CardTerminal cardTerminal) {
 		this.cardTerminal = cardTerminal;
@@ -82,6 +83,14 @@ public abstract class AbstractTerminalTagScanner implements Runnable {
 		if (nfcipConnection != null && nfcipConnectionListener != null) {
 			nfcipConnectionListener.onConnection(nfcipConnection);
 		}
+	}
+
+	public boolean isRunning() {
+		return running;
+	}
+
+	public void setRunning(boolean running) {
+		this.running = running;
 	}
 
 }

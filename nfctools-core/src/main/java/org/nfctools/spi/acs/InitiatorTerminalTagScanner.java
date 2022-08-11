@@ -44,7 +44,8 @@ public class InitiatorTerminalTagScanner extends AbstractTerminalTagScanner impl
 
 	@Override
 	public void run() {
-		while (!Thread.interrupted()) {
+		this.running = true;
+		while (!Thread.interrupted()&&(running)) {
 			notifyStatus(TerminalStatus.WAITING);
 			try {
 				if (cardTerminal.waitForCardPresent(500)) {
